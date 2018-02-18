@@ -11,52 +11,44 @@ export default class Game extends React.Component {
         this.state = {
           squares: initialiseGameBoard(),
           sourceSelection: -1,
-        //   row: row,
-        //   col: col,
+            moves: 1,
           status: ''
         }
     }
 
     handleClick(i){
-        const squares = this.state.squares.slice();// array of squares containing mario and mushroom info along with index
-        console.log('check i '+ i);
+        const squares = this.state.squares.slice();
         
-        if(this.state.sourceSelection === -1){ //modifying the source of the hero to current location of it
-            console.log('handleclick if');
-            //squares[i].style = {...squares[i].style, backgroundColor: "RGB(111,143,114)"}; // Emerald from http://omgchess.blogspot.com/2015/09/chess-board-color-schemes.html
+        if(this.state.sourceSelection === -1){
             this.setState({
                 status: "Choose destination for the selected piece",
                 sourceSelection: i
             },() => console.log(this.state.sourceSelection));
         }
         else if(this.state.sourceSelection > -1){
-        //delete squares[this.state.sourceSelection].style.backgroundColor;
-          if(squares[i]){   //initialize new turn
-            console.log('reset '+i);
-            //reset is required to initialize new turn
+        if(squares[i] != null) {
+            squares[i] = null;
+            squares[this.state.sourceSelection] = null;
+        }
+          if(squares[i]){
             this.setState({
                 status: "Wrong selection. Choose valid source and destination again.",
                 sourceSelection: -1,
             },() => console.log(this.state.sourceSelection));
           }
           else{
+            this.setState({
+                moves: this.state.moves + 1
+            },() => console.log(this.state.sourceSelection));
+            
             const squares = this.state.squares.slice();
             const l = this.state.squares.length;
             const isDestEnemyOccupied = squares[i]? true : false; 
             const isMovePossible = squares[this.state.sourceSelection].isMovePossible(this.state.sourceSelection, i, isDestEnemyOccupied, this.state.squares[l-1], this.state.squares[l-2]);
-            console.log('is move possible '+ isMovePossible);
             const srcToDestPath = squares[this.state.sourceSelection].getSrcToDestPath(this.state.sourceSelection, i);
             const isMoveLegal = this.isMoveLegal(srcToDestPath);
     
             if(isMovePossible && isMoveLegal){
-            //   if(squares[i] !== null){
-            //     if(squares[i].player === 1){
-            //       whiteFallenSoldiers.push(squares[i]);
-            //     }
-            //     else{
-            //       blackFallenSoldiers.push(squares[i]);
-            //     }
-            //   }
               squares[i] = squares[this.state.sourceSelection];
               squares[this.state.sourceSelection] = null;
               this.setState({
@@ -64,7 +56,6 @@ export default class Game extends React.Component {
                 squares: squares,
                 status: '',
                 },() => console.log(this.state.sourceSelection));
-                console.log('restart done');
             }
             else{
               this.setState({
@@ -73,7 +64,13 @@ export default class Game extends React.Component {
               });
             }
           }
-          console.log(this.state.sourceSelection);
+          var flag=0;
+          for(let k=1; k<squares.length-2; k++) {
+            if(squares[k]!=null)
+            flag=1
+          }
+          if(flag===0)
+          alert("total moves "+ this.state.moves);
         }
     
       }
@@ -89,7 +86,6 @@ export default class Game extends React.Component {
     }
 
     render() {
-        console.log('game');
         return (
             <div className="game-board">
                 <Board

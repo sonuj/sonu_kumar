@@ -1,8 +1,7 @@
-//used for placement of mario and mushrooms on the board
 import Mario from '../characters/mario.js';
 import Mushroom from '../characters/mushroom.js';
 
-export default function initialiseGameBoard(){// get called only one time at the starting
+export default function initialiseGameBoard(){
 
     const col = parseInt(prompt("Please enter board Width"));
     const row = parseInt(prompt("Please enter board height"));
@@ -11,7 +10,7 @@ export default function initialiseGameBoard(){// get called only one time at the
     squares[0] = new Mario(2);
 
     const max = col>row ? col:row;
-    const nos = col*row - 2;
+    const nos = col*row;
     
     for(let i = 0; i < max; i++) {
         squares[Math.floor(Math.random() * nos + 1)] = new Mushroom(2);

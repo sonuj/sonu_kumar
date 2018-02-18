@@ -16,7 +16,6 @@ renderSquare(i) {
 }
 
 render() {
-    console.log('board');
     const l = this.props.squares.length;
     const board = [];
     let count=0;

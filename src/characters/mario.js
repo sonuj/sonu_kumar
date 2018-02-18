@@ -6,7 +6,6 @@ export default class Mario extends Character {
     }
 
     isMovePossible(src, dest, isenemy, col, row){
-        console.log('mario'+ col);
         return ( 
           src - col === dest || 
           src + 1 === dest || 
