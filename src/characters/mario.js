@@ -5,11 +5,12 @@ export default class Mario extends Character {
         super(player, "https://upload.wikimedia.org/wikipedia/mk/9/99/MarioSMBW.png");
     }
 
-    isMovePossible(src, dest){
+    isMovePossible(src, dest, isenemy, col, row){
+        console.log('mario'+ col);
         return ( 
-          src - 8 === dest || 
+          src - col === dest || 
           src + 1 === dest || 
-          src + 8 === dest ||
+          src + col === dest ||
           src - 1 === dest);
     }
 

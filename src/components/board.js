@@ -16,14 +16,17 @@ renderSquare(i) {
 }
 
 render() {
-    //console.log(this.props);
+    console.log('board');
+    const l = this.props.squares.length;
     const board = [];
-    for(let i = 0; i < this.props.row; i++){
+    let count=0;
+    for(let i = 0; i < this.props.squares[l-2]; i++){
         const squareRows = [];
-        for(let j = 0; j < this.props.col; j++){
-            squareRows.push(this.renderSquare((i*this.props.row) + j));
+        for(let j = 0; j < this.props.squares[l-1]; j++){
+            squareRows.push(this.renderSquare(count));
+            count++;
         }
-    board.push(<div className="board-row">{squareRows}</div>)
+        board.push(<div className="board-row">{squareRows}</div>)
     }
 
     return (
