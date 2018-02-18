@@ -10,18 +10,18 @@ renderSquare(i) {
     return <Square
         piece = {this.props.squares[i]}
         style = {this.props.squares[i]? this.props.squares[i].style : null}
-        id= {i} />
+        id= {i}
+        onClick={() => this.props.onClick(i)}
+        />
 }
 
 render() {
     //console.log(this.props);
     const board = [];
-    const col = parseInt(prompt("Please enter board Width"));
-    const row = parseInt(prompt("Please enter board height"));
-    for(let i = 0; i < row; i++){
+    for(let i = 0; i < this.props.row; i++){
         const squareRows = [];
-        for(let j = 0; j < col; j++){
-            squareRows.push(this.renderSquare((i*8) + j));
+        for(let j = 0; j < this.props.col; j++){
+            squareRows.push(this.renderSquare((i*this.props.row) + j));
         }
     board.push(<div className="board-row">{squareRows}</div>)
     }

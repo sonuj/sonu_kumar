@@ -6,7 +6,9 @@ import '../index.css';
 export default function Square(props) {
     return (
         <button className={props.id}
-                style={props.style}>
+                style={props.style}
+                onClick={props.onClick}
+                >
         </button>
     );
   
