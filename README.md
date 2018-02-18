@@ -23,3 +23,7 @@ collect all the mushroom in minimum number of steps.
 * Mario can move one step at a time (up, down, left, right)
 * to move mario click on him and click on any of the box (up, down, left, right)
 * game ends when all mushroom is collected
+
+## DEMO
+
+![demo](https://media.giphy.com/media/1d5Nn7lbqO78Z7GYEO/giphy.gif)
