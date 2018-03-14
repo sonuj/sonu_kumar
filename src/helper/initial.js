@@ -3,14 +3,13 @@ import Mushroom from '../characters/mushroom.js';
 
 export default function initialiseGameBoard(){
 
-    const col = parseInt(prompt("Please enter board Width"));
-    const row = parseInt(prompt("Please enter board height"));
-
+    const col = parseInt(prompt("Please enter no of columns you want"));
+    const row = parseInt(prompt("Please enter no of rows you want"));
     const squares = Array(col*row).fill(null);
-    squares[0] = new Mario(2);
 
     const max = col>row ? col:row;
     const nos = col*row;
+    squares[0] = new Mario(2);
     
     for(let i = 0; i < max; i++) {
         squares[Math.floor(Math.random() * nos + 1)] = new Mushroom(2);
