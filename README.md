@@ -1,4 +1,4 @@
-# A simple step counting game in react js
+# Simple Mario game in react js
 
 # Installation
 
@@ -16,14 +16,12 @@
 * Visit app at [http://localhost:3000.](http://localhost:3000)
 
 ## Mission
-collect all the mushroom in minimum number of steps.
+collect all the mushroom.
 
 ## How to play
 * enter number of rows and column for playing field
 * Mario can move one step at a time (up, down, left, right)
 * to move mario click on him and click on any of the box (up, down, left, right)
 * game ends when all mushroom is collected
+* you will get total no of steps taken and total no of time taken to complete
 
-## DEMO
-
-![demo](https://media.giphy.com/media/1d5Nn7lbqO78Z7GYEO/giphy.gif)
