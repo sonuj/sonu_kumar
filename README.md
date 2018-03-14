@@ -8,7 +8,7 @@
 
 ## Installation
 * `git clone <repository-url>` this repo
-* `cd reactjs_game`
+* `cd task_super_mario_game`
 * `npm install`
 
 ## Running
