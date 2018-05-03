@@ -1,11 +1,12 @@
 {
-  "name": "hackerbay_react_test",
+  "name": "react_test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "moment": "^2.21.0",
+    "material-ui": "^0.20.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-mdl": "^1.11.0",
     "react-scripts": "1.1.1"
   },
   "scripts": {

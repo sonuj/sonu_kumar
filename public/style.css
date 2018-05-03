@@ -1,0 +1,11 @@
+.killed{
+	display: inline-block;
+    vertical-align: text-top;
+    padding: 0px 5px;
+}
+.select{
+	margin-top: -10px;
+}
+.filter{
+	margin-top: 40px;
+}
