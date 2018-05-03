@@ -85,7 +85,7 @@ export default class Task extends React.Component {
     render() {
         let {searchText,sortVal} = this.state
         return (
-            <div className = "main-div">
+            <div className = "filter">
                 <Grid>
                     <Cell col= {2} className ="filter">Filter:- </Cell>
                     <Cell col= {3}>
